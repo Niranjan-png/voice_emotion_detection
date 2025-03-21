@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎙 Voice Emotion Detection</h1>
+
+        <div class="controls">
+            <button id="startRecording" class="btn btn-primary">🎤 Start Recording</button>
+            <button id="stopRecording" class="btn btn-danger" disabled>⏹ Stop Recording</button>
+        </div>
+
+        <canvas id="waveform"></canvas>
+
+        <div class="status">Press "Start Recording" to analyze your emotion.</div>
+        <div class="error"></div>
+        <div class="spinner"></div>
+
+        <div class="results" style="display: none;">
+            <h2>Detected Emotion</h2>
+            <div class="emotion-result">
+                <div class="emotion-label" id="detectedEmotion">😐 Neutral</div>
+            </div>
+
+            <div class="probability-bars">
+                <!-- Emotion probabilities will be inserted dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
